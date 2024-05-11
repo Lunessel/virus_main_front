@@ -1,0 +1,53 @@
+[
+  {
+    "disappearance_date": "2024-05-11",
+    "disappearance_place": "Донецька обл, Покровський район, с. Хапотронівка",
+    "latitude": 49.838537,
+    "longitude": 23.991599,
+    "surname": "Парасюк",
+    "name": "Микола",
+    "father_name": "Іванович",
+    "surname_rus": "Парасюк",
+    "name_rus": "Николай",
+    "father_name_rus": "Иванович",
+    "date_of_birth": "2024-05-11",
+    "gender": "male",
+    "description": "Опис зовнішності",
+    "special_data": "Особливі прикмети",
+    "contact_data": "+380000000000"
+  },
+  {
+    "disappearance_date": "2024-05-11",
+    "disappearance_place": "Донецька обл, Покровський район, с. Хапотронівка",
+    "latitude": 49.835970,
+    "longitude": 24.025181,
+    "surname": "Парасюк",
+    "name": "Микола",
+    "father_name": "Іванович",
+    "surname_rus": "Парасюк",
+    "name_rus": "Николай",
+    "father_name_rus": "Иванович",
+    "date_of_birth": "2024-05-11",
+    "gender": "male",
+    "description": "Опис зовнішності",
+    "special_data": "Особливі прикмети",
+    "contact_data": "+380000000000"
+  },
+  {
+    "disappearance_date": "2024-05-11",
+    "disappearance_place": "Донецька обл, Покровський район, с. Хапотронівка",
+    "latitude": 49.846380,
+    "longitude": 23.983848,
+    "surname": "Парасюк",
+    "name": "Микола",
+    "father_name": "Іванович",
+    "surname_rus": "Парасюк",
+    "name_rus": "Николай",
+    "father_name_rus": "Иванович",
+    "date_of_birth": "2024-05-11",
+    "gender": "male",
+    "description": "Опис зовнішності",
+    "special_data": "Особливі прикмети",
+    "contact_data": "+380000000000"
+  }
+]

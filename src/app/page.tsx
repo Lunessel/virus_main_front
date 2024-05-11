@@ -1,5 +1,7 @@
-import TgAuth from "@/app/features/TgAuth/TgAuth";
-import styles from "./page.module.css";
+import TgAuth from "@/features/TgAuth/TgAuth";
+import styles from "./page.module.scss";
+import LostPeopleMap from "@/features/LostPeopleMap/LostPeopleMap";
+import NavBar from "@/features/NavBar/NavBar";
 
 export default function Home() {
 
@@ -8,7 +10,9 @@ export default function Home() {
   };
   return (
     <main className={styles.main}>
-      <TgAuth/>
+      {/*<TgAuth/>*/}
+      <NavBar/>
+      <LostPeopleMap/>
     </main>
   );
 }
