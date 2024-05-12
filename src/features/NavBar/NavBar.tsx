@@ -6,9 +6,6 @@ import styles from './NavBar.module.scss'
 const NavBar = () => {
     return (
         <header className={styles.root}>
-            <nav className={styles.dropdown}>
-                <h3>drop</h3>
-            </nav>
             <Image src={logo} alt={'Seeker'}/>
             <div>
                 <div className={styles.navigation}>

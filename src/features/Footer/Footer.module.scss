@@ -1,0 +1,28 @@
+.footer {
+  padding: 40px 0 100px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  //grid-template-rows: repeat(4, 1fr);
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 40px;
+
+  img {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 550px) {
+
+    grid-template-columns: none;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 0;
+  }
+}

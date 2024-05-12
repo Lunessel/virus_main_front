@@ -19,6 +19,7 @@ const LostPeopleMap = () => {
     const user_location = useGeolocation();
     const [active, setActive] = useState<boolean>(false)
     const [latLng, setLatLng] = useState<{lat: number, lng: number}>({lat: 0, lng: 0});
+    const [activePerson, setActivePerson] = useState(dataset[0])
     useEffect(() => {
         if (!user_location.loading && user_location.latitude && user_location.longitude) {
             setLatLng({lat: user_location.latitude, lng: user_location.longitude})
@@ -31,19 +32,24 @@ const LostPeopleMap = () => {
                 <div className={styles.weatherStationMap}>
                     <Map
                         defaultZoom={9}
-                        center={latLng} mapId={"aef11bcaed8d296f"}
+                        defaultCenter={latLng} mapId={"aef11bcaed8d296f"}
                     >
                         {dataset.map((value, index) => (
                             <div key={index}>
-                                <AdvancedMarker  position={{lat: value.latitude, lng: value.longitude}} onClick={() => setActive(true)}>
+                                <AdvancedMarker  position={{lat: value.latitude, lng: value.longitude}} onClick={() => {
+                                    setActive(true)
+                                    console.log(value)
+                                    setActivePerson(value)
+                                }}>
                                     <Pin/>
                                 </AdvancedMarker>
-                                <SidebarInfo active={active} setActive={setActive} person={value}/>
 
                             </div>
                         ))}
 
                     </Map>
+                    <SidebarInfo active={active} setActive={setActive} person={activePerson}/>
+
                 </div>
             </APIProvider>
         </div>

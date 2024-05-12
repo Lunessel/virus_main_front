@@ -9,7 +9,7 @@ const MatchedPerson = ({image, height, width, ...props}:{image: string, height: 
     return (
         <div className={styles.root}>
             <div className={styles.person}>
-                {/*<Image src={image} alt={'Matched person'} height={height} width={width}/>*/}
+                <Image src={image} alt={'Matched person'} height={height} width={width}/>
             </div>
             <div className={styles.buttons}>
                 <button onClick={() => setGoOver(true)}>Перейти</button>
