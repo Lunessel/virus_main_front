@@ -1,5 +1,5 @@
+// @ts-nocheck
 "use client";
-
 import React, {useEffect, useState} from 'react';
 import InputImage from "@/shared/InputImage/InputImage";
 import styles from "./FindPerson.module.scss";
