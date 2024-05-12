@@ -2,6 +2,7 @@ import TgAuth from "@/features/TgAuth/TgAuth";
 import styles from "./page.module.scss";
 import LostPeopleMap from "@/features/LostPeopleMap/LostPeopleMap";
 import NavBar from "@/features/NavBar/NavBar";
+import FindPerson from "@/features/FindPerson/FindPerson";
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
       {/*<TgAuth/>*/}
       <NavBar/>
       <LostPeopleMap/>
+      <FindPerson />
     </main>
   );
 }
