@@ -83,6 +83,7 @@ const FindPerson = () => {
     const handlePhoto = (e: React.FormEvent) => {
         e.preventDefault()
         const formData = new FormData();
+        // @ts-ignore
         formData.append('file', image);
         // console.log(`${baseURL}/uploads?missing_id=${missing_id}&media_type=${"image/jpeg"}`)
         if (image)
@@ -119,6 +120,7 @@ const FindPerson = () => {
     }, [missing_id, message]);
 
 
+    // @ts-ignore
     return (
         <div className={styles.root}>
             <h1>Знайти людину</h1>
