@@ -1,0 +1,36 @@
+.auth-textfield__label {
+  color: black !important;
+
+}
+
+.auth-textfield__input {
+  color: black !important;
+  //background-color: rgb(189, 193, 195) !important;
+
+
+}
+//.MuiInputLabel-root {
+//  color: red !important;
+//  padding-left: 20px !important;
+//  transition: 0.3s;
+//
+//}
+//.MuiInputLabel-root.Mui-focused{
+//  color: red !important;
+//  padding-left: 0 !important;
+//}
+.customTextField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline{
+  border-color: black;
+
+}
+
+
+.customTextField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: black;
+
+}
+
+.customTextField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: black;
+
+}

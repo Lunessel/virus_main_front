@@ -1,0 +1,147 @@
+.root {
+  background-color: white;
+  border-radius: 6px;
+  padding: 40px 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+
+  @media (max-width: 800px) {
+    padding: 40px 40px;
+
+  }
+
+  h1 {
+    font-size: 40px;
+    color: black ;
+    text-align: center;
+
+    @media (max-width: 800px) {
+      font-size: 30px;
+
+    }
+  }
+
+
+  .caution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    row-gap: 40px;
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      color: black;
+
+      @media (max-width: 800px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .explicit_content{
+    display:flex;
+    column-gap: 10px;
+    align-items: center;
+
+  }
+
+  .info {
+    display: flex;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+
+  }
+
+  .input_info_mobile {
+    display: none;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      row-gap: 20px;
+      display: flex;
+    }
+  }
+
+
+  .input_info_desktop {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+
+  }
+
+  button {
+    width: fit-content;
+    background: none;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 12px 68px;
+    color: black;
+    font-size: 24px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    button {
+      width: fit-content;
+      background: none;
+      border: solid 1px black;
+      border-radius: 10px;
+      padding: 12px 68px;
+      color: black;
+      font-size: 24px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+  }
+
+  hr {
+    border-color: black;
+    size: 2px;
+    width: 100%;
+  }
+
+  .matches{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 40px;
+
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+  }
+
+}

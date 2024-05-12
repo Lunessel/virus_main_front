@@ -1,0 +1,38 @@
+.root {
+  width: 225px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person{
+  height: 300px;
+  width: 100%;
+  background-color: #6C6C6C;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.buttons {
+  width: 100%;
+  background-color: #839074;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  padding: 10px 0;
+
+  button {
+
+    background: none;
+    border: solid 1px white;
+    padding: 6px 30px;
+    color: white;
+    font-size: 24px;
+    font-family: inherit;
+    cursor: pointer;
+
+  }
+}
