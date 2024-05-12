@@ -18,3 +18,10 @@ export interface IPerson {
     missing_id: number,
     upload_ids: number[]
 }
+
+export interface ISeekPeople {
+    source_url: string,
+    date_published: string,
+    coincidence_id: number,
+    upload_ids: number[]
+}

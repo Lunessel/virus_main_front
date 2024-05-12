@@ -1,16 +1,15 @@
 "use client";
-import React, {useState, ChangeEvent, useRef} from 'react';
+import React, {useState, ChangeEvent, useRef, Dispatch, SetStateAction} from 'react';
 import styles from './InputImage.module.scss';
 import Image from "next/image";
 import upload from "./images/upload.svg"
 
-const InputImage = () => {
-    const [file, setFile] = useState<string | undefined>();
+const InputImage = ({file, setFile}:{file: Blob | undefined, setFile:Dispatch<SetStateAction<Blob | undefined>>}) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     function handleChange(e: ChangeEvent<HTMLInputElement>) {
         if (e.target.files) {
-            setFile(URL.createObjectURL(e.target.files[0]));
+            setFile(e.target.files[0]);
         }
     }
 
@@ -36,7 +35,7 @@ const InputImage = () => {
             />
             {file &&
                 <div onClick={handleButtonClick}>
-                    <Image src={file} alt={'file'} height={300} width={225}/>
+                    <Image src={URL.createObjectURL(file)} alt={'file'} height={300} width={225}/>
                 </div>
             }
         </div>

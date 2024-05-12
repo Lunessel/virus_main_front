@@ -8,29 +8,74 @@ import Image from "next/image";
 import InfoTextField from "@/shared/InfoTextField/InfoTextField";
 import DateInputField from "@/shared/DateInputField/DateInputField";
 import MatchedPerson from "@/entities/MatchedPerson/MatchedPerson";
-import {IPerson} from "@/types/types";
+import {IPerson, ISeekPeople} from "@/types/types";
 
-const baseURL = "https://34.118.102.90:8443/api/v1"
+const baseURL = "https://5284-31-144-168-144.ngrok-free.app/api/v1"
 const FindPerson = () => {
     const [name, setName] = useState()
     const [surname, setSurname] = useState()
     const [father_name, setFather_name] = useState()
-    const [date_of_birth, setDate_of_birth] = useState()
-    const [missings, setMissings] = useState<IPerson>()
-    
-    const handleSubmit = () => {
+    const [date_of_birth, setDate_of_birth] = useState('2024-05-11')
+    const [missing_id, setMissing_id] = useState<IPerson>()
+    const [image, setImage] = useState<Blob>()
+    const [matchedList, setMatchedList] = useState<ISeekPeople[]>()
+    const handleSubmit = (e:any) => {
+        console.log(name)
+        console.log(surname)
+        console.log(father_name)
+        console.log(date_of_birth)
+        e.preventDefault()
         fetch(
-            `${baseURL}/missings`,
+            `https://5284-31-144-168-144.ngrok-free.app/api/v1/missings?name=${'Микола'}&surname=${'Парасюк'}&father_name=${'Іванович'}&date_of_birth=${'2024-05-11'}`,
+            {
+                method: "GET"
+            }
+        ).then((res) => res.json()).then((data) => {
+            console.log(data)
+            setMissing_id(data)
+
+        }).catch(reason => console.log(reason))
+        console.log(missing_id)
+        if (!missing_id) {
+            fetch(
+                `${baseURL}/missings`,
+                {
+                    method: "POST",
+                    body:JSON.stringify({
+                        name: name,
+                        surname: surname,
+                        father_name: father_name,
+                        date_of_birth: date_of_birth
+                    })
+                }
+            ).then((res) => res.json()).then((data) => {
+                setMissing_id(data)
+
+            }).catch(reason => console.log(reason))
+        }
+
+        fetch(
+            `${baseURL}/uploads?missing_id=${missing_id}`,
+            {
+                method: "POST",
+                body:JSON.stringify({
+                    file: image
+                })
+            }
+        ).then().catch(reason => console.log(reason))
+
+        fetch(
+            `${baseURL}/coincidences/search?missing_id =${missing_id}`,
             {
                 method: "GET",
             }
         ).then((res) => res.json()).then((data) => {
-            setMissings(data)
+            setMatchedList(data)
 
-        }).catch(
+        }).catch(reason => console.log(reason))
 
-        )
     }
+    console.log(matchedList)
 
     return (
         <div className={styles.root}>
@@ -56,7 +101,7 @@ const FindPerson = () => {
                         <InfoTextField text={'По батькові'} width={'280px'} onChange={(e:any) => setFather_name(e.target.value)}/>
                         <DateInputField width={'280px'} onChange={(e:any) => setDate_of_birth(e.target.value)}/>
                     </div>
-                    <InputImage/>
+                    <InputImage file={image} setFile={setImage}/>
                 </div>
                 <button>Знайти</button>
             </form>

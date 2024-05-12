@@ -13,7 +13,6 @@ const SidebarInfo = ({active, setActive, person}:
     const toggleDrawer = (newOpen: boolean) => () => {
         setActive(newOpen);
     };
-    console.log(person)
     return (
         <Drawer open={active} onClose={toggleDrawer(false)} hideBackdrop>
             <div className={styles.drawer}>
