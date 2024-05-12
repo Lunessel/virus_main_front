@@ -1,0 +1,45 @@
+.drawer {
+  padding: 20px 20px 10px 30px;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.content {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  h4 {
+    color: black;
+    padding: 14px 0 9px 0;
+    border-bottom: 1px solid black;
+
+    text-align: center;
+  }
+}
+
+.photo {
+  width: 225px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+.findButton {
+  width: 230px;
+  padding: 16px 0;
+  border-radius: 10px;
+  background: rgb(131, 144, 116);
+
+  border: 0;
+  outline: 0;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+}

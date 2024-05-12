@@ -14,5 +14,7 @@ export interface IPerson {
     gender: string,
     description: string,
     special_data: string,
-    contact_data: string
+    contact_data: string,
+    missing_id: number,
+    upload_ids: number[]
 }

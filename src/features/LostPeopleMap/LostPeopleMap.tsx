@@ -12,10 +12,12 @@ import {
     Pin,
     InfoWindow,
 } from "@vis.gl/react-google-maps";
+import SidebarInfo from "@/features/SidebarInfo/SidebarInfo";
+
 
 const LostPeopleMap = () => {
     const user_location = useGeolocation();
-
+    const [active, setActive] = useState<boolean>(false)
     const [latLng, setLatLng] = useState<{lat: number, lng: number}>({lat: 0, lng: 0});
     useEffect(() => {
         if (!user_location.loading && user_location.latitude && user_location.longitude) {
@@ -25,13 +27,20 @@ const LostPeopleMap = () => {
 
     return (
         <div>
-            <APIProvider apiKey={"AIzaSyBni8kPhUkYMD03DG1evIPLEc38jzrvSWg"}>
+            <APIProvider apiKey={"AIzaSyAv3pmRiimKkpwcy5Jp4pVWby2apJz0LzU"} >
                 <div className={styles.weatherStationMap}>
-                    <Map defaultZoom={9} center={latLng} mapId={"fd3f6927221a4b0a"} >
+                    <Map
+                        defaultZoom={9}
+                        center={latLng} mapId={"aef11bcaed8d296f"}
+                    >
                         {dataset.map((value, index) => (
-                            <AdvancedMarker key={index} position={{lat: value.latitude, lng: value.longitude}}>
-                                <Pin/>
-                            </AdvancedMarker>
+                            <div key={index}>
+                                <AdvancedMarker  position={{lat: value.latitude, lng: value.longitude}} onClick={() => setActive(true)}>
+                                    <Pin/>
+                                </AdvancedMarker>
+                                <SidebarInfo active={active} setActive={setActive} person={value}/>
+
+                            </div>
                         ))}
 
                     </Map>

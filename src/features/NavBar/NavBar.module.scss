@@ -1,23 +1,39 @@
 .root {
   padding: 30px 100px;
+  max-height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 1000px) {
+    padding: 20px 40px;
+  }
+
   & > div {
+    //width: calc(50%);
     display: flex;
-    column-gap: 120px;
+    column-gap: 40px;
+    justify-content: space-between;
+    align-items: center;
   }
 
 }
 
-.languages {
+.dropdown {
+  display: none;
 
+  @media screen and (max-width: 800px) {
+    display: flex;
+  }
 }
 
 .navigation {
-    display: flex;
-    column-gap: 20px;
+  display: flex;
+  column-gap: 20px;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 
   & > div {
     width: 2px;

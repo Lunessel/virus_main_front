@@ -12,6 +12,7 @@ export default function BasicDateField({width,  ...props}:{width: string}) {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={['DateField']}>
                 <DateField
+                    {...props}
                     label="Дата зникнення"
                     className="customTextField centerLabel"
                     InputLabelProps={{className: 'auth-textfield__label'}}
